@@ -1,14 +1,14 @@
 {
-  "name": "@hyperlane-xyz/warp-ui-template",
+  "name": "@humanode-hyperlane/warp-ui",
   "version": "13.0.0",
   "private": true,
-  "description": "A web app template for building Hyperlane Warp Route UIs",
-  "homepage": "https://www.hyperlane.xyz",
+  "description": "The web app for Humanode's warp routes, from Hyperlane's Warp UI template",
+  "homepage": "https://warp.hmnd.app",
   "license": "Apache-2.0",
   "author": "J M Rossy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperlane-xyz/hyperlane-warp-ui-template"
+    "url": "https://github.com/humanode-network/hyperlane-warp-ui"
   },
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
