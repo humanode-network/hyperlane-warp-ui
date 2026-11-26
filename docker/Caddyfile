@@ -1,0 +1,63 @@
+# The app's server in the image: the static export (`pnpm build`, out/) in
+# /srv, with the security headers that Next's server gave it before the
+# export, and the deploy-time settings.
+#
+# Its environment, read at start:
+# - NEXT_PUBLIC_EMBED_ALLOWED_ORIGINS: who may frame /embed, `*` by default,
+#   as upstream's README describes it.
+# - NEXT_PUBLIC_*: the app's deploy-time settings, which /config.js gives it
+#   (docker/config.js).
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+# content_security_policy <matcher> <frame-ancestors>: upstream's policy, the
+# same for every page but for who may frame it.
+(content_security_policy) {
+	header {args[0]} Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://snaps.consensys.io https://js.refiner.io https://app.intercom.io https://widget.intercom.io https://js.intercomcdn.com; style-src 'self' 'unsafe-inline' https://js.refiner.io https://storage.refiner.io; connect-src *; img-src 'self' blob: data: https://*.walletconnect.com https://*.githubusercontent.com https://cdn.jsdelivr.net/gh/hyperlane-xyz/hyperlane-registry@main/ https://js.refiner.io https://storage.refiner.io https://js.intercomcdn.com https://static.intercomassets.com https://downloads.intercomcdn.com https://uploads.intercomusercontent.com https://gifs.intercomcdn.com; font-src 'self' data: https://js.intercomcdn.com https://fonts.intercomcdn.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self' https://*.walletconnect.com https://*.walletconnect.org https://cdn.solflare.com https://js.refiner.io https://intercom-sheets.com https://intercom-reporting.com; frame-ancestors {args[1]}; media-src 'self' https://js.refiner.io https://storage.refiner.io https://js.intercomcdn.com https://downloads.intercomcdn.com; block-all-mixed-content; upgrade-insecure-requests"
+}
+
+:{$PORT:3000} {
+	root * /srv
+	encode zstd gzip
+
+	# The pages: paths with no extension, and .html ones.
+	@page {
+		path_regexp ^/([^.]*|.*\.html)$
+	}
+
+	# The deploy-time settings, rendered from the environment.
+	@config path /config.js
+	templates @config {
+		mime text/javascript application/javascript
+	}
+
+	# The build's hashed files never change; the pages and the settings are
+	# checked again on each load.
+	header /_next/static/* Cache-Control "public, max-age=31536000, immutable"
+	header @page Cache-Control "no-cache"
+	header /config.js Cache-Control "no-cache"
+
+	# The security headers of upstream's next.config.js: /embed may be framed
+	# by the origins allowed, every other path by none.
+	header {
+		X-XSS-Protection "1; mode=block"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+	@embed path /embed /embed.html
+	@not_embed not path /embed /embed.html
+	import content_security_policy @embed "{$NEXT_PUBLIC_EMBED_ALLOWED_ORIGINS:*}"
+	import content_security_policy @not_embed "'none'"
+	header @not_embed X-Frame-Options DENY
+
+	# /embed is embed.html; a path with no file is the export's 404 page.
+	try_files {path} {path}.html
+	file_server
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server
+	}
+}

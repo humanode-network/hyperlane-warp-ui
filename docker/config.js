@@ -1,0 +1,20 @@
+// Deploy-time settings (src/consts/deployTimeSettings.ts), rendered by Caddy's
+// templates from the container's environment on each request. A setting left
+// unset or empty is an empty string here, which the app reads as unset.
+window.__APP_CONFIG__ = {
+  NEXT_PUBLIC_ALEO_NETWORK: '{{ env "NEXT_PUBLIC_ALEO_NETWORK" | js }}',
+  NEXT_PUBLIC_CHAIN_WALLET_WHITELISTS: '{{ env "NEXT_PUBLIC_CHAIN_WALLET_WHITELISTS" | js }}',
+  NEXT_PUBLIC_EXPLORER_API_URL: '{{ env "NEXT_PUBLIC_EXPLORER_API_URL" | js }}',
+  NEXT_PUBLIC_FEE_QUOTING_URL: '{{ env "NEXT_PUBLIC_FEE_QUOTING_URL" | js }}',
+  NEXT_PUBLIC_GITHUB_PROXY: '{{ env "NEXT_PUBLIC_GITHUB_PROXY" | js }}',
+  NEXT_PUBLIC_INTERCOM_APP_ID: '{{ env "NEXT_PUBLIC_INTERCOM_APP_ID" | js }}',
+  NEXT_PUBLIC_REFINER_PROJECT_ID: '{{ env "NEXT_PUBLIC_REFINER_PROJECT_ID" | js }}',
+  NEXT_PUBLIC_REFINER_TRANSFER_FORM_ID: '{{ env "NEXT_PUBLIC_REFINER_TRANSFER_FORM_ID" | js }}',
+  NEXT_PUBLIC_REGISTRY_BRANCH: '{{ env "NEXT_PUBLIC_REGISTRY_BRANCH" | js }}',
+  NEXT_PUBLIC_REGISTRY_URL: '{{ env "NEXT_PUBLIC_REGISTRY_URL" | js }}',
+  NEXT_PUBLIC_RELAY_API_URL: '{{ env "NEXT_PUBLIC_RELAY_API_URL" | js }}',
+  NEXT_PUBLIC_RPC_OVERRIDES: '{{ env "NEXT_PUBLIC_RPC_OVERRIDES" | js }}',
+  NEXT_PUBLIC_SENTRY_DSN: '{{ env "NEXT_PUBLIC_SENTRY_DSN" | js }}',
+  NEXT_PUBLIC_TRANSFER_BLACKLIST: '{{ env "NEXT_PUBLIC_TRANSFER_BLACKLIST" | js }}',
+  NEXT_PUBLIC_WALLET_CONNECT_ID: '{{ env "NEXT_PUBLIC_WALLET_CONNECT_ID" | js }}',
+};
