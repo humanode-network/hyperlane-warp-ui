@@ -1,0 +1,20 @@
+# Test values for CI.
+# The chart in the repository has no appVersion; CI's packaged check renders
+# without this tag.
+image:
+  tag: sha-ci00000
+deployTimeSettings:
+  NEXT_PUBLIC_WALLET_CONNECT_ID: ci-wallet-connect-id
+  NEXT_PUBLIC_REGISTRY_URL: https://example.com/registry
+embedAllowedOrigins: https://a.example.com https://b.example.com
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: app.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: app-example-com-tls
+      hosts: [app.example.com]

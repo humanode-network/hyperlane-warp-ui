@@ -1,0 +1,82 @@
+# The web app: the static export served by Caddy on port 3000, its settings
+# given at deploy time.
+
+# The app's image: by default the one built from the chart's own commit, which
+# CI publishes with the chart and tags with its appVersion, `sha-<commit>`.
+# `digest` (`sha256:…`) or `tag` runs another.
+image:
+  repository: ghcr.io/humanode-network/hyperlane-warp-ui
+  digest: ''
+  # The chart's appVersion when empty.
+  tag: ''
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+replicaCount: 2
+
+# The app's deploy-time settings, by name, as /config.js gives them to it; a
+# setting left out is unset, and the app falls back to its build's, which has
+# none. A name outside the app's settings fails the render. They are read by
+# the browser, so none is a secret.
+deployTimeSettings: {}
+#  NEXT_PUBLIC_WALLET_CONNECT_ID: …
+#  NEXT_PUBLIC_REGISTRY_URL: …
+
+# Who may frame /embed, as Content-Security-Policy frame-ancestors sources
+# separated by spaces; empty for the image's default, any site (`*`).
+embedAllowedOrigins: ''
+
+service:
+  type: ClusterIP
+  port: 80
+
+# An Ingress to the Service, of the class and with the annotations the cluster
+# expects; off by default.
+ingress:
+  enabled: false
+  className: ''
+  annotations: {}
+  hosts: []
+  #  - host: app.example.com
+  #    paths:
+  #      - path: /
+  #        pathType: Prefix
+  tls: []
+  #  - secretName: app-example-com-tls
+  #    hosts: [app.example.com]
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    memory: 128Mi
+
+podAnnotations: {}
+podLabels: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+# --- Extension points --------------------------------------------------------
+
+# Extra environment, as EnvVar objects (`valueFrom` included), after every
+# variable the chart sets.
+extraEnv: []
+# Extra environment from whole ConfigMaps or Secrets, as EnvFromSource objects.
+extraEnvFrom: []
+extraVolumes: []
+extraVolumeMounts: []
+initContainers: []
+# Sidecars, as Container objects.
+extraContainers: []
+
+serviceAccount:
+  # A ServiceAccount of the release's name; otherwise `name` (or the namespace
+  # default) is used.
+  create: false
+  name: ''
+  annotations: {}
+  # The app never calls the Kubernetes API.
+  automountToken: false

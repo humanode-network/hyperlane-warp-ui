@@ -1,0 +1,91 @@
+# The app's chart (charts/hyperlane-warp-ui): checked, then pushed to GHCR as
+# an OCI chart for every branch, except from pull requests, which only check
+# it. The chart is versioned 0.0.0-sha-<short sha>, with the appVersion
+# sha-<short sha>, the tag docker.yml gives the image of the same commit.
+name: helm
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  CHART: charts/hyperlane-warp-ui
+
+jobs:
+  helm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Lint and render the chart with its CI values
+        run: |
+          set -euo pipefail
+          helm lint "${CHART}" -f "${CHART}/ci/test-values.yaml"
+          helm template ci "${CHART}" -f "${CHART}/ci/test-values.yaml" > /dev/null
+
+      # Packaged as it is published, the chart runs the image of its own
+      # commit, by its appVersion, with no image in the values.
+      - name: Check the packaged chart's default image
+        run: |
+          set -euo pipefail
+          dir=$(mktemp -d)
+          helm package "${CHART}" --version 0.0.0-sha-ci00000 --app-version sha-ci00000 --destination "${dir}" > /dev/null
+          image=$(helm template ci "${dir}"/*.tgz -f "${CHART}/ci/test-values.yaml" --set image.tag= \
+            | yq 'select(.kind == "Deployment") | .spec.template.spec.containers[0].image')
+          expected=ghcr.io/humanode-network/hyperlane-warp-ui:sha-ci00000
+          [[ ${image} == "${expected}" ]] || { echo "the packaged chart runs ${image}, not ${expected}"; exit 1; }
+
+      # Flux's chartRef to an OCIRepository gives the chart the version
+      # <version>+<digest>; a `+` is not allowed in a label value, so every
+      # label the chart derives from the version must stay valid with one.
+      - name: Render with a build-metadata version, as Flux sets it
+        run: |
+          set -euo pipefail
+          dir=$(mktemp -d)
+          helm package "${CHART}" --version "0.0.0-sha-ci+0123456789ab" --destination "${dir}" > /dev/null
+          out=$(helm template ci "${dir}"/*.tgz -f "${CHART}/ci/test-values.yaml")
+          bad=$(yq -N '.. | select(tag == "!!map" and has("labels")) | .labels | to_entries | .[] | select(.value | test("^(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?$") | not) | .key + ": " + .value' <<<"${out}")
+          if [[ -n ${bad} ]]; then echo "invalid label values:"; echo "${bad}"; exit 1; fi
+
+      # The chart's list of deploy-time settings is the image's: a setting
+      # /config.js gives the app and the chart refuses, or the other way round,
+      # fails here.
+      - name: Check the deploy-time settings against docker/config.js
+        run: |
+          set -euo pipefail
+          in_image=$(grep -o '^  NEXT_PUBLIC_[A-Z_]*' docker/config.js | tr -d ' ' | sort)
+          in_chart=$(sed -n '/define "warpUi.deployTimeSettingNames"/{n;p}' "${CHART}/templates/_helpers.tpl" | tr ' ' '\n' | sort)
+          diff <(echo "${in_image}") <(echo "${in_chart}") || { echo "the chart's deploy-time settings differ from docker/config.js"; exit 1; }
+
+      - name: Helm meta
+        uses: ./.github/actions/helm-meta
+        id: meta
+
+      - name: Login to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: ./.github/actions/helm-login
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish hyperlane-warp-ui
+        if: github.event_name != 'pull_request'
+        uses: ./.github/actions/helm-publish
+        with:
+          chart-name: hyperlane-warp-ui
+          chart-path: ${{ env.CHART }}
+          chart-version: ${{ steps.meta.outputs.chart-version }}
+          chart-app-version: ${{ steps.meta.outputs.chart-app-version }}
+          registry: ghcr.io
+          registry-path: ${{ github.repository }}/charts

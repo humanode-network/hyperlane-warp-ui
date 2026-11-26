@@ -1,0 +1,5 @@
+apiVersion: v2
+name: hyperlane-warp-ui
+description: The web app for transfers over Hyperlane Warp Routes, as a static site served by Caddy, its settings given at deploy time.
+type: application
+version: 0.0.0
