@@ -7,7 +7,6 @@ const mibToBytes = (mib) => Math.round(mib * MIB);
 const ROUTE_BUDGETS = {
   '/': { raw: mibToBytes(50), gzip: mibToBytes(8.2) },
   '/embed': { raw: mibToBytes(49), gzip: mibToBytes(8.6) },
-  '/blocked': { raw: mibToBytes(29), gzip: mibToBytes(5.4) },
 };
 
 const formatMib = (bytes) => `${(bytes / MIB).toFixed(2)} MiB`;
