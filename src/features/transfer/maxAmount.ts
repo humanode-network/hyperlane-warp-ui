@@ -1,7 +1,7 @@
-import { MultiProtocolProvider, Token, TokenAmount, WarpCore } from '@hyperlane-xyz/sdk';
-import { KnownProtocolType } from '@hyperlane-xyz/utils';
-import { getAccountAddressAndPubKey } from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
-import { type AccountInfo } from '@hyperlane-xyz/widgets/walletIntegrations/types';
+import { MultiProtocolProvider, Token, TokenAmount, WarpCore } from '@humanode-hyperlane/sdk';
+import { KnownProtocolType } from '@humanode-hyperlane/utils';
+import { getAccountAddressAndPubKey } from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
+import { type AccountInfo } from '@humanode-hyperlane/widgets/walletIntegrations/types';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 

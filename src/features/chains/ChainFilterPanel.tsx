@@ -1,5 +1,5 @@
-import { ChainName } from '@hyperlane-xyz/sdk';
-import { ProtocolType, toTitleCase } from '@hyperlane-xyz/utils';
+import { ChainName } from '@humanode-hyperlane/sdk';
+import { ProtocolType, toTitleCase } from '@humanode-hyperlane/utils';
 import {
   ArrowIcon,
   ChevronIcon,
@@ -7,7 +7,7 @@ import {
   PencilIcon,
   UpDownArrowsIcon,
   XIcon,
-} from '@hyperlane-xyz/widgets';
+} from '@humanode-hyperlane/widgets';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { SearchInput } from '../../components/input/SearchInput';

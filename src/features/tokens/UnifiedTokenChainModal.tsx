@@ -1,5 +1,5 @@
-import { Token } from '@hyperlane-xyz/sdk';
-import { Modal } from '@hyperlane-xyz/widgets';
+import { Token } from '@humanode-hyperlane/sdk';
+import { Modal } from '@humanode-hyperlane/widgets';
 import { useCallback, useState } from 'react';
 
 import { ModalHeader } from '../../components/layout/ModalHeader';

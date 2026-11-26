@@ -1,8 +1,8 @@
 import {
   ProviderType,
   type TypedTransactionReceipt,
-} from '@hyperlane-xyz/sdk/providers/ProviderType';
-import { ProtocolType, isNullish } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk/providers/ProviderType';
+import { ProtocolType, isNullish } from '@humanode-hyperlane/utils';
 
 import { config } from '../../consts/config';
 import { logger } from '../../utils/logger';

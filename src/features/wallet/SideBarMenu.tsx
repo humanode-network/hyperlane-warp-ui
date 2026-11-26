@@ -1,7 +1,7 @@
-import { normalizeAddress } from '@hyperlane-xyz/utils';
-import { RefreshIcon, SpinnerIcon } from '@hyperlane-xyz/widgets';
-import { AccountList } from '@hyperlane-xyz/widgets/walletIntegrations/AccountList';
-import { useAccounts } from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+import { normalizeAddress } from '@humanode-hyperlane/utils';
+import { RefreshIcon, SpinnerIcon } from '@humanode-hyperlane/widgets';
+import { AccountList } from '@humanode-hyperlane/widgets/walletIntegrations/AccountList';
+import { useAccounts } from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'react-toastify';

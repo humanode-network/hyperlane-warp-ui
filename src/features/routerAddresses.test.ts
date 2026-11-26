@@ -1,5 +1,5 @@
-import { TokenStandard } from '@hyperlane-xyz/sdk/token/TokenStandard';
-import { normalizeAddress } from '@hyperlane-xyz/utils';
+import { TokenStandard } from '@humanode-hyperlane/sdk/token/TokenStandard';
+import { normalizeAddress } from '@humanode-hyperlane/utils';
 import { describe, expect, test } from 'vitest';
 
 import { createMockToken } from '../utils/test';

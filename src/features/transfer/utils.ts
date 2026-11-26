@@ -1,12 +1,12 @@
-import type { CoreAddresses } from '@hyperlane-xyz/sdk/core/contracts';
-import type { MultiProtocolCore } from '@hyperlane-xyz/sdk/core/MultiProtocolCore';
+import type { CoreAddresses } from '@humanode-hyperlane/sdk/core/contracts';
+import type { MultiProtocolCore } from '@humanode-hyperlane/sdk/core/MultiProtocolCore';
 import {
   ProviderType,
   type TypedTransactionReceipt,
   type ViemProvider,
-} from '@hyperlane-xyz/sdk/providers/ProviderType';
-import type { ChainMap, ChainName } from '@hyperlane-xyz/sdk/types';
-import { ensure0x, isValidAddress, isValidAddressEvm } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk/providers/ProviderType';
+import type { ChainMap, ChainName } from '@humanode-hyperlane/sdk/types';
+import { ensure0x, isValidAddress, isValidAddressEvm } from '@humanode-hyperlane/utils';
 import { concat, getAddress, keccak256, toHex } from 'viem';
 import type { Hex } from 'viem';
 
@@ -121,7 +121,7 @@ export async function tryGetMsgIdFromTransferReceipt(
         };
         return acc;
       }, {});
-    const { MultiProtocolCore } = await import('@hyperlane-xyz/sdk/core/MultiProtocolCore');
+    const { MultiProtocolCore } = await import('@humanode-hyperlane/sdk/core/MultiProtocolCore');
     const core = new MultiProtocolCore(multiProvider, addressStubs);
     const messages = await core.extractMessageIds(origin, receipt);
     if (messages.length) {

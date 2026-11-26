@@ -34,7 +34,7 @@ pnpm clean            # Remove build artifacts (dist, cache, .next)
 - **State**: Zustand with persist middleware (`src/features/store.ts`)
 - **Queries**: TanStack Query
 - **Wallets**: Each blockchain uses distinct, composable wallet providers (EVM/RainbowKit, Solana, Cosmos, Starknet, Radix)
-- **Core Libraries**: `@hyperlane-xyz/sdk`, `@hyperlane-xyz/registry`, `@hyperlane-xyz/widgets`, `@hyperlane-xyz/utils`
+- **Core Libraries**: `@humanode-hyperlane/sdk`, `@humanode-hyperlane/registry`, `@humanode-hyperlane/widgets`, `@humanode-hyperlane/utils`
 
 ### Key Directories
 
@@ -141,7 +141,7 @@ EOF
 
 1. **Run tests incrementally** - `pnpm vitest <file>` for specific test files
 2. **Check existing patterns** - Search codebase for similar implementations
-3. **Use SDK types** - Import from `@hyperlane-xyz/sdk`, don't redefine
+3. **Use SDK types** - Import from `@humanode-hyperlane/sdk`, don't redefine
 4. **Zustand for state** - Global state in `src/features/store.ts`
 5. **Keep changes minimal** - Only modify what's necessary; avoid scope creep
 6. **Feature folders** - Domain logic in `src/features/`, not scattered

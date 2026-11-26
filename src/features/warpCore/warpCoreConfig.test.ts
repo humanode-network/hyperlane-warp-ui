@@ -1,5 +1,10 @@
-import { TokenStandard, WarpCore, WarpCoreConfig, getTokenConnectionId } from '@hyperlane-xyz/sdk';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import {
+  TokenStandard,
+  WarpCore,
+  WarpCoreConfig,
+  getTokenConnectionId,
+} from '@humanode-hyperlane/sdk';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { describe, expect, test } from 'vitest';
 
 import {

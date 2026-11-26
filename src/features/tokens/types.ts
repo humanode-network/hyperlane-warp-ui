@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@hyperlane-xyz/sdk';
+import { Token, TokenAmount } from '@humanode-hyperlane/sdk';
 
 export interface TokensWithDestinationBalance {
   originToken: Token;

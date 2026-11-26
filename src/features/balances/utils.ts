@@ -1,5 +1,5 @@
-import { Token } from '@hyperlane-xyz/sdk';
-import { fromWeiRounded } from '@hyperlane-xyz/utils';
+import { Token } from '@humanode-hyperlane/sdk';
+import { fromWeiRounded } from '@humanode-hyperlane/utils';
 
 import { getTokenKey } from '../tokens/utils';
 

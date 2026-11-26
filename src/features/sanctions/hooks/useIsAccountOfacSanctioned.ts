@@ -1,5 +1,5 @@
-import { eqAddress } from '@hyperlane-xyz/utils';
-import { useEthereumAccount } from '@hyperlane-xyz/widgets/walletIntegrations/ethereum';
+import { eqAddress } from '@humanode-hyperlane/utils';
+import { useEthereumAccount } from '@humanode-hyperlane/widgets/walletIntegrations/ethereum';
 import { useQuery } from '@tanstack/react-query';
 
 import { useMultiProvider } from '../../chains/hooks';

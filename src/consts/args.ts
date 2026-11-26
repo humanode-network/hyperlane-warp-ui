@@ -1,4 +1,4 @@
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 
 export enum WARP_QUERY_PARAMS {
   ORIGIN = 'origin',

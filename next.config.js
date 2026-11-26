@@ -204,10 +204,10 @@ const nextConfig = {
     parallelServerCompiles: true,
     parallelServerBuildTraces: true,
     optimizePackageImports: [
-      '@hyperlane-xyz/registry',
-      '@hyperlane-xyz/sdk',
-      '@hyperlane-xyz/utils',
-      '@hyperlane-xyz/widgets',
+      '@humanode-hyperlane/registry',
+      '@humanode-hyperlane/sdk',
+      '@humanode-hyperlane/utils',
+      '@humanode-hyperlane/widgets',
     ],
   },
 

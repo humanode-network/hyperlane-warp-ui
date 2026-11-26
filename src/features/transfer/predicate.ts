@@ -1,12 +1,12 @@
-import type { IToken, Token, WarpCore } from '@hyperlane-xyz/sdk';
+import type { IToken, Token, WarpCore } from '@humanode-hyperlane/sdk';
 import {
   PredicateAttestation,
   TokenAmount,
   WarpTxCategory,
   WarpTypedTransaction,
   isPredicateCapableAdapter,
-} from '@hyperlane-xyz/sdk';
-import { ProtocolType, assert } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { ProtocolType, assert } from '@humanode-hyperlane/utils';
 
 import { fetchAttestation as fetchAttestationFromProxy } from '../../lib/predicateClient';
 import { logger } from '../../utils/logger';

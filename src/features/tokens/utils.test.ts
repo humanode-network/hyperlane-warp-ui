@@ -1,4 +1,4 @@
-import { TestChainName, TokenStandard, WarpCore } from '@hyperlane-xyz/sdk';
+import { TestChainName, TokenStandard, WarpCore } from '@humanode-hyperlane/sdk';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { createMockToken, createTokenConnectionMock } from '../../utils/test';

@@ -1,5 +1,5 @@
-import { isValidAddress, ProtocolType } from '@hyperlane-xyz/utils';
-import { Modal, XIcon } from '@hyperlane-xyz/widgets';
+import { isValidAddress, ProtocolType } from '@humanode-hyperlane/utils';
+import { Modal, XIcon } from '@humanode-hyperlane/widgets';
 import { useState } from 'react';
 
 import { SolidButton } from '../../components/buttons/SolidButton';

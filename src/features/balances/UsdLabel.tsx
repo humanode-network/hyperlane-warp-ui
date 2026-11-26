@@ -1,4 +1,4 @@
-import { TokenAmount } from '@hyperlane-xyz/sdk';
+import { TokenAmount } from '@humanode-hyperlane/sdk';
 
 import { getUsdDisplayForFee } from './feeUsdDisplay';
 import type { FeePrices } from './useFeePrices';

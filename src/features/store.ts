@@ -3,7 +3,7 @@ import {
   GithubRegistry,
   IRegistry,
   PartialRegistry,
-} from '@hyperlane-xyz/registry';
+} from '@humanode-hyperlane/registry';
 import {
   ChainMap,
   ChainMetadata,
@@ -12,8 +12,8 @@ import {
   Token,
   WarpCore,
   WarpCoreConfig,
-} from '@hyperlane-xyz/sdk';
-import { normalizeAddress, objFilter } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { normalizeAddress, objFilter } from '@humanode-hyperlane/utils';
 import { toast } from 'react-toastify';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
@@ -316,7 +316,7 @@ async function initWarpContext({
     await currentRegistry.listRegistryContent();
   } catch (error) {
     // Lazy-load the published constants so they stay out of the initial bundle
-    const { chainAddresses, chainMetadata } = await import('@hyperlane-xyz/registry');
+    const { chainAddresses, chainMetadata } = await import('@humanode-hyperlane/registry');
     currentRegistry = new PartialRegistry({
       chainAddresses,
       chainMetadata,

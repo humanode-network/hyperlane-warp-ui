@@ -1,9 +1,9 @@
-import { toTitleCase } from '@hyperlane-xyz/utils';
+import { toTitleCase } from '@humanode-hyperlane/utils';
 import {
   useConnectFns,
   useDisconnectFns,
   useWalletDetails,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useMemo } from 'react';
 
 import { FormWarningBanner } from '../../components/banner/FormWarningBanner';

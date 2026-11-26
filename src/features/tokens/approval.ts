@@ -1,5 +1,5 @@
-import { IToken, QuotedCallsParams } from '@hyperlane-xyz/sdk';
-import { useAccountAddressForChain } from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+import { IToken, QuotedCallsParams } from '@humanode-hyperlane/sdk';
+import { useAccountAddressForChain } from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useQuery } from '@tanstack/react-query';
 
 import { useToastError } from '../../components/toast/useToastError';

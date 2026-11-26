@@ -1,5 +1,11 @@
-import type { IToken, Token, TokenAmount, WarpCore, WarpCoreFeeEstimate } from '@hyperlane-xyz/sdk';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import type {
+  IToken,
+  Token,
+  TokenAmount,
+  WarpCore,
+  WarpCoreFeeEstimate,
+} from '@humanode-hyperlane/sdk';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { findConnectedDestinationToken } from '../tokens/utils';
@@ -195,7 +201,7 @@ describe('fetchFeeQuotes', () => {
     const pinnedInterchainFee = { amount: 100n } as unknown as TokenAmount;
     const mockAttestation = {
       uuid: 'test-uuid',
-    } as unknown as import('@hyperlane-xyz/sdk').PredicateAttestation;
+    } as unknown as import('@humanode-hyperlane/sdk').PredicateAttestation;
     mockFetchPredicateAttestation.mockResolvedValue({
       attestation: mockAttestation,
       interchainFee: pinnedInterchainFee,

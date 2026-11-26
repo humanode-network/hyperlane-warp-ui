@@ -1,7 +1,7 @@
-import { isAbacusWorksChain } from '@hyperlane-xyz/registry';
-import { ChainMap, ChainMetadata, ChainStatus, WarpCore } from '@hyperlane-xyz/sdk';
-import { toTitleCase, trimToLength } from '@hyperlane-xyz/utils';
-import { ChainSearchMenuProps } from '@hyperlane-xyz/widgets';
+import { isAbacusWorksChain } from '@humanode-hyperlane/registry';
+import { ChainMap, ChainMetadata, ChainStatus, WarpCore } from '@humanode-hyperlane/sdk';
+import { toTitleCase, trimToLength } from '@humanode-hyperlane/utils';
+import { ChainSearchMenuProps } from '@humanode-hyperlane/widgets';
 
 import { config } from '../../consts/config';
 

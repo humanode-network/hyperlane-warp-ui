@@ -1,4 +1,4 @@
-import { SpinnerIcon, useTimeout } from '@hyperlane-xyz/widgets';
+import { SpinnerIcon, useTimeout } from '@humanode-hyperlane/widgets';
 import { PropsWithChildren, useState } from 'react';
 
 import { Color } from '../styles/Color';

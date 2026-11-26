@@ -1,5 +1,5 @@
-import { ChainName, ChainStatus } from '@hyperlane-xyz/sdk';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ChainName, ChainStatus } from '@humanode-hyperlane/sdk';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { useMemo } from 'react';
 
 import { config } from '../../consts/config';

@@ -4,9 +4,8 @@ import { wallets as cosmostationWallets } from '@cosmos-kit/cosmostation';
 import { wallets as keplrWallets } from '@cosmos-kit/keplr';
 import { wallets as leapWallets } from '@cosmos-kit/leap';
 import { ChainProvider } from '@cosmos-kit/react';
-import { cosmoshub } from '@hyperlane-xyz/registry';
-import { MultiProtocolProvider } from '@hyperlane-xyz/sdk';
-import { getCosmosKitChainConfigs } from '@hyperlane-xyz/widgets/walletIntegrations/cosmos';
+import { MultiProtocolProvider } from '@humanode-hyperlane/sdk';
+import { getCosmosKitChainConfigs } from '@humanode-hyperlane/widgets/walletIntegrations/cosmos';
 import '@interchain-ui/react/styles';
 import { PropsWithChildren, useMemo } from 'react';
 
@@ -16,6 +15,7 @@ import { useMultiProvider } from '../../chains/hooks';
 import { E2EAutoConnectCosmos } from '../_e2e/E2EAutoConnectCosmos';
 import { isE2EMode } from '../_e2e/isE2E';
 import { MockCosmosWallet } from '../_e2e/MockCosmosWallet';
+import { cosmoshubStartupChain } from './walletStartupChains';
 
 const theme = extendTheme({
   fonts: {
@@ -27,7 +27,10 @@ const theme = extendTheme({
 export function CosmosWalletContext({ children }: PropsWithChildren<unknown>) {
   const chainMetadata = useMultiProvider().metadata;
   const { chains, assets } = useMemo(() => {
-    const multiProvider = new MultiProtocolProvider({ ...chainMetadata, cosmoshub });
+    const multiProvider = new MultiProtocolProvider({
+      ...chainMetadata,
+      cosmoshub: cosmoshubStartupChain,
+    });
     return getCosmosKitChainConfigs(multiProvider);
   }, [chainMetadata]);
   const leapWithoutSnap = leapWallets.filter((wallet) => !wallet.walletName.includes('snap'));

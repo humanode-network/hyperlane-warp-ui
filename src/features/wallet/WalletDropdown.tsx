@@ -1,11 +1,11 @@
-import { ProtocolType, shortenAddress } from '@hyperlane-xyz/utils';
-import { ChevronIcon, DropdownMenu, useModal, XIcon } from '@hyperlane-xyz/widgets';
+import { ProtocolType, shortenAddress } from '@humanode-hyperlane/utils';
+import { ChevronIcon, DropdownMenu, useModal, XIcon } from '@humanode-hyperlane/widgets';
 import {
   useAccountAddressForChain,
   useAccountForChain,
   useConnectFns,
   useDisconnectFns,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import React, { useCallback, useMemo } from 'react';
 
 import { Color } from '../../styles/Color';

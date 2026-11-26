@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from '@hyperlane-xyz/widgets';
+import { SearchIcon, XIcon } from '@humanode-hyperlane/widgets';
 import { Ref } from 'react';
 
 import { TextInput } from './TextField';

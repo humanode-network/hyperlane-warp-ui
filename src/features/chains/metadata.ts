@@ -1,12 +1,12 @@
-import { IRegistry } from '@hyperlane-xyz/registry';
+import { IRegistry } from '@humanode-hyperlane/registry';
 import {
   ChainMap,
   ChainMetadata,
   ChainMetadataSchema,
   mergeChainMetadataMap,
   RpcUrlSchema,
-} from '@hyperlane-xyz/sdk';
-import { objFilter, objMap, promiseObjAll, tryParseJsonOrYaml } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { objFilter, objMap, promiseObjAll, tryParseJsonOrYaml } from '@humanode-hyperlane/utils';
 import { z } from 'zod';
 
 import { chains as ChainsTS } from '../../consts/chains.ts';
@@ -21,7 +21,7 @@ export async function assembleChainMetadata(
   storeMetadataOverrides?: ChainMap<Partial<ChainMetadata | undefined>>,
 ) {
   // Chains must include a cosmos chain or CosmosKit throws errors
-  const result = z.record(ChainMetadataSchema).safeParse({
+  const result = z.record(z.string(), ChainMetadataSchema).safeParse({
     ...ChainsYaml,
     ...ChainsTS,
   });
@@ -47,7 +47,7 @@ export async function assembleChainMetadata(
     logger.debug('Using default published registry for chain metadata');
   }
   if (!registryChainMetadata) {
-    registryChainMetadata = (await import('@hyperlane-xyz/registry')).chainMetadata;
+    registryChainMetadata = (await import('@humanode-hyperlane/registry')).chainMetadata;
   }
 
   // Filter out chains that are not in the tokens config
@@ -69,7 +69,7 @@ export async function assembleChainMetadata(
 
   const parsedRpcOverridesResult = tryParseJsonOrYaml(config.rpcOverrides);
   const rpcOverrides = z
-    .record(RpcUrlSchema)
+    .record(z.string(), RpcUrlSchema)
     .safeParse(parsedRpcOverridesResult.success && parsedRpcOverridesResult.data);
   if (config.rpcOverrides && !rpcOverrides.success) {
     logger.warn('Invalid RPC overrides config', rpcOverrides.error);

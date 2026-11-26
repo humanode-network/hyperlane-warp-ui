@@ -1,5 +1,5 @@
-import { ChainName, Token } from '@hyperlane-xyz/sdk';
-import { Tooltip, useDebounce } from '@hyperlane-xyz/widgets';
+import { ChainName, Token } from '@humanode-hyperlane/sdk';
+import { Tooltip, useDebounce } from '@humanode-hyperlane/widgets';
 import React, { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 
 import { config } from '../../consts/config';

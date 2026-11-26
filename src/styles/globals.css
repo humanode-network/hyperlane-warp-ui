@@ -318,7 +318,7 @@ Needs to be higher than Intercom chatbox (z-index: 2147483000)
 Theme mode
 ==========
 Chain Edit Modal widget style overrides.
-Many selectors below target widget internals (.htw-*); revisit during @hyperlane-xyz/widgets upgrades.
+Many selectors below target widget internals (.htw-*); revisit during @humanode-hyperlane/widgets upgrades.
 */
 .chain-edit-container {
   font-family: var(--font-secondary, 'PP Valve', system-ui, sans-serif);

@@ -1,5 +1,5 @@
-import { WarpCoreFeeEstimate } from '@hyperlane-xyz/sdk';
-import { Modal, Skeleton, Tooltip } from '@hyperlane-xyz/widgets';
+import { WarpCoreFeeEstimate } from '@humanode-hyperlane/sdk';
+import { Modal, Skeleton, Tooltip } from '@humanode-hyperlane/widgets';
 import Link from 'next/link';
 
 import { links } from '../../consts/links';

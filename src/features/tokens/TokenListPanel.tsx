@@ -1,4 +1,4 @@
-import { ChainName, Token } from '@hyperlane-xyz/sdk';
+import { ChainName, Token } from '@humanode-hyperlane/sdk';
 import { useEffect, useRef } from 'react';
 
 import { SearchInput } from '../../components/input/SearchInput';

@@ -49,10 +49,10 @@ jobs:
       - name: Get latest SDK, Utils, Registry, and Widgets versions
         id: get-versions
         run: |
-          LATEST_SDK=$(pnpm view @hyperlane-xyz/sdk version)
-          LATEST_UTILS=$(pnpm view @hyperlane-xyz/utils version)
-          LATEST_REGISTRY=$(pnpm view @hyperlane-xyz/registry version)
-          LATEST_WIDGETS=$(pnpm view @hyperlane-xyz/widgets version)
+          LATEST_SDK=$(pnpm view @humanode-hyperlane/sdk version)
+          LATEST_UTILS=$(pnpm view @humanode-hyperlane/utils version)
+          LATEST_REGISTRY=$(pnpm view @humanode-hyperlane/registry version)
+          LATEST_WIDGETS=$(pnpm view @humanode-hyperlane/widgets version)
           echo "sdk=$LATEST_SDK" >> $GITHUB_OUTPUT
           echo "utils=$LATEST_UTILS" >> $GITHUB_OUTPUT
           echo "registry=$LATEST_REGISTRY" >> $GITHUB_OUTPUT
@@ -64,10 +64,10 @@ jobs:
 
       - name: Update package.json with latest versions
         run: |
-          npm pkg set dependencies.@hyperlane-xyz/sdk=${{ steps.get-versions.outputs.sdk }}
-          npm pkg set dependencies.@hyperlane-xyz/utils=${{ steps.get-versions.outputs.utils }}
-          npm pkg set dependencies.@hyperlane-xyz/registry=${{ steps.get-versions.outputs.registry }}
-          npm pkg set dependencies.@hyperlane-xyz/widgets=${{ steps.get-versions.outputs.widgets }}
+          npm pkg set dependencies.@humanode-hyperlane/sdk=${{ steps.get-versions.outputs.sdk }}
+          npm pkg set dependencies.@humanode-hyperlane/utils=${{ steps.get-versions.outputs.utils }}
+          npm pkg set dependencies.@humanode-hyperlane/registry=${{ steps.get-versions.outputs.registry }}
+          npm pkg set dependencies.@humanode-hyperlane/widgets=${{ steps.get-versions.outputs.widgets }}
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
@@ -81,10 +81,10 @@ jobs:
             git add -A
             git commit -m "chore: update Hyperlane deps to SDK ${{ steps.get-versions.outputs.sdk }} and Registry ${{ steps.get-versions.outputs.registry }}
 
-          - Update @hyperlane-xyz/sdk to ${{ steps.get-versions.outputs.sdk }}
-          - Update @hyperlane-xyz/utils to ${{ steps.get-versions.outputs.utils }}
-          - Update @hyperlane-xyz/registry to ${{ steps.get-versions.outputs.registry }}
-          - Update @hyperlane-xyz/widgets to ${{ steps.get-versions.outputs.widgets }}"
+          - Update @humanode-hyperlane/sdk to ${{ steps.get-versions.outputs.sdk }}
+          - Update @humanode-hyperlane/utils to ${{ steps.get-versions.outputs.utils }}
+          - Update @humanode-hyperlane/registry to ${{ steps.get-versions.outputs.registry }}
+          - Update @humanode-hyperlane/widgets to ${{ steps.get-versions.outputs.widgets }}"
 
             git push -fu origin ci/update-hl-deps
 
@@ -94,10 +94,10 @@ jobs:
           This PR updates the Hyperlane dependencies to their latest versions.
 
           **Updated versions:**
-          - \`@hyperlane-xyz/sdk\`: \`${{ steps.get-versions.outputs.sdk }}\`
-          - \`@hyperlane-xyz/utils\`: \`${{ steps.get-versions.outputs.utils }}\`
-          - \`@hyperlane-xyz/registry\`: \`${{ steps.get-versions.outputs.registry }}\`
-          - \`@hyperlane-xyz/widgets\`: \`${{ steps.get-versions.outputs.widgets }}\`
+          - \`@humanode-hyperlane/sdk\`: \`${{ steps.get-versions.outputs.sdk }}\`
+          - \`@humanode-hyperlane/utils\`: \`${{ steps.get-versions.outputs.utils }}\`
+          - \`@humanode-hyperlane/registry\`: \`${{ steps.get-versions.outputs.registry }}\`
+          - \`@humanode-hyperlane/widgets\`: \`${{ steps.get-versions.outputs.widgets }}\`
 
           **Changes include:**
           - Updated \`package.json\` with latest Hyperlane package versions

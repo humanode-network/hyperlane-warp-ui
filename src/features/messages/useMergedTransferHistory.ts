@@ -1,4 +1,4 @@
-import type { MultiProtocolProvider, WarpCore } from '@hyperlane-xyz/sdk';
+import type { MultiProtocolProvider, WarpCore } from '@humanode-hyperlane/sdk';
 import { useMemo } from 'react';
 
 import { logger } from '../../utils/logger';

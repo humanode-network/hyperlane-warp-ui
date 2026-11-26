@@ -1,4 +1,4 @@
-import { PredicateApiClient } from '@hyperlane-xyz/sdk';
+import { PredicateApiClient } from '@humanode-hyperlane/sdk';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { logger } from '../../../utils/logger';

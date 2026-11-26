@@ -1,7 +1,7 @@
 import {
   IRegistry,
   warpRouteConfigs as publishedRegistryWarpRoutes,
-} from '@hyperlane-xyz/registry';
+} from '@humanode-hyperlane/registry';
 import {
   TOKEN_STANDARD_TO_PROTOCOL,
   TokenStandard,
@@ -10,8 +10,8 @@ import {
   getTokenConnectionId,
   parseTokenConnectionId,
   validateZodResult,
-} from '@hyperlane-xyz/sdk';
-import { isObjEmpty, objFilter, objMerge } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { isObjEmpty, objFilter, objMerge } from '@humanode-hyperlane/utils';
 
 import { config } from '../../consts/config.ts';
 import { warpRouteConfigs as tsWarpRoutes } from '../../consts/warpRoutes.ts';

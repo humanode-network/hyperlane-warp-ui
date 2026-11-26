@@ -1,4 +1,4 @@
-import { MultiProtocolProvider, Token } from '@hyperlane-xyz/sdk';
+import { MultiProtocolProvider, Token } from '@humanode-hyperlane/sdk';
 
 import { logger } from '../../utils/logger';
 

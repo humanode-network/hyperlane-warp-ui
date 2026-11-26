@@ -1,4 +1,4 @@
-import { Token } from '@hyperlane-xyz/sdk';
+import { Token } from '@humanode-hyperlane/sdk';
 import { useField, useFormikContext } from 'formik';
 import { useState } from 'react';
 

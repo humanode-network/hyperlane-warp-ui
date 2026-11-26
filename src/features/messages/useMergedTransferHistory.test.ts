@@ -1,7 +1,7 @@
-import { MultiProtocolProvider, WarpCore } from '@hyperlane-xyz/sdk';
-import type { ChainMetadata } from '@hyperlane-xyz/sdk/metadata/chainMetadataTypes';
-import type { ChainMap } from '@hyperlane-xyz/sdk/types';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { MultiProtocolProvider, WarpCore } from '@humanode-hyperlane/sdk';
+import type { ChainMetadata } from '@humanode-hyperlane/sdk/metadata/chainMetadataTypes';
+import type { ChainMap } from '@humanode-hyperlane/sdk/types';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { describe, expect, test } from 'vitest';
 
 import { createMockToken } from '../../utils/test';

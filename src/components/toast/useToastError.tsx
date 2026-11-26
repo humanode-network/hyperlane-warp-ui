@@ -1,4 +1,4 @@
-import { errorToString } from '@hyperlane-xyz/utils';
+import { errorToString } from '@humanode-hyperlane/utils';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 

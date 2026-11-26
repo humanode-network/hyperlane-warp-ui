@@ -1,4 +1,4 @@
-import { DefaultIconProps } from '@hyperlane-xyz/widgets';
+import { DefaultIconProps } from '@humanode-hyperlane/widgets';
 import { memo } from 'react';
 
 function _HyperlaneGradientLogo({ ...props }: DefaultIconProps) {

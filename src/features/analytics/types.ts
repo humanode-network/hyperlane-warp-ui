@@ -1,4 +1,4 @@
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 
 export enum EVENT_NAME {
   PAGE_VIEWED = 'Page Viewed',

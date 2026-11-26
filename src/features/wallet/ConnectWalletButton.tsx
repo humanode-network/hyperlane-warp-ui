@@ -1,4 +1,4 @@
-import { ConnectWalletButton as ConnectWalletButtonInner } from '@hyperlane-xyz/widgets/walletIntegrations/ConnectWalletButton';
+import { ConnectWalletButton as ConnectWalletButtonInner } from '@humanode-hyperlane/widgets/walletIntegrations/ConnectWalletButton';
 
 import { useMultiProvider } from '../chains/hooks';
 import { useStore } from '../store';

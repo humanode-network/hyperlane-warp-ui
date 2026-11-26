@@ -1,4 +1,4 @@
-import { WarningIcon } from '@hyperlane-xyz/widgets';
+import { WarningIcon } from '@humanode-hyperlane/widgets';
 import { PropsWithChildren, ReactNode } from 'react';
 
 export function WarningBanner({

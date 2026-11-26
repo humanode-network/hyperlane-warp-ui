@@ -1,10 +1,10 @@
-import type { MultiProtocolProvider } from '@hyperlane-xyz/sdk';
+import type { MultiProtocolProvider } from '@humanode-hyperlane/sdk';
 import {
   assert,
   bytesToProtocolAddress,
   fromHexString,
   parseWarpRouteMessage,
-} from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/utils';
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useMemo, useState } from 'react';
 

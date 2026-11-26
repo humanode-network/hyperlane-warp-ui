@@ -42,13 +42,13 @@ This approach is simpler and more reliable than yalc for monorepos with pnpm cat
 
 ### Common packages to link
 
-- `sdk` - @hyperlane-xyz/sdk
-- `utils` - @hyperlane-xyz/utils
-- `widgets` - @hyperlane-xyz/widgets
-- `registry` - @hyperlane-xyz/registry
-- `deploy-sdk` - @hyperlane-xyz/deploy-sdk
-- `tron-sdk` - @hyperlane-xyz/tron-sdk (unpublished)
-- `provider-sdk` - @hyperlane-xyz/provider-sdk
+- `sdk` - @humanode-hyperlane/sdk
+- `utils` - @humanode-hyperlane/utils
+- `widgets` - @humanode-hyperlane/widgets
+- `registry` - @humanode-hyperlane/registry
+- `deploy-sdk` - @humanode-hyperlane/deploy-sdk
+- `tron-sdk` - @humanode-hyperlane/tron-sdk (unpublished)
+- `provider-sdk` - @humanode-hyperlane/provider-sdk
 
 ### Development workflow
 
@@ -134,7 +134,7 @@ ls ../hyperlane-monorepo/typescript/sdk/*.tgz
 
 # Manually update package.json to use a packed version
 # "dependencies": {
-#   "@hyperlane-xyz/sdk": "file:../hyperlane-monorepo/typescript/sdk/hyperlane-xyz-sdk-21.1.0.tgz"
+#   "@humanode-hyperlane/sdk": "file:../hyperlane-monorepo/typescript/sdk/hyperlane-xyz-sdk-21.1.0.tgz"
 # }
 
 # Force reinstall

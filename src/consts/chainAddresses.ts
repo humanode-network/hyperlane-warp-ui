@@ -1,10 +1,10 @@
-import { ChainAddresses } from '@hyperlane-xyz/registry';
-import { ChainMap } from '@hyperlane-xyz/sdk';
+import { ChainAddresses } from '@humanode-hyperlane/registry';
+import { ChainMap } from '@humanode-hyperlane/sdk';
 
 // Per-chain contract addresses to merge with the configured registry's
 // addresses. Entries here override registry entries per key. Useful when
 // you need TypeScript-side imports (e.g. importing pre-built `*Addresses`
-// constants from `@hyperlane-xyz/registry`).
+// constants from `@humanode-hyperlane/registry`).
 //
 // For YAML-friendly definitions, use `chainAddresses.yaml` instead.
 // Schema: any contract addresses you'd find in a registry chain's addresses.yaml

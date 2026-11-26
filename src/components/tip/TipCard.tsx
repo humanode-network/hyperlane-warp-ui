@@ -1,4 +1,4 @@
-import { IconButton, XCircleIcon } from '@hyperlane-xyz/widgets';
+import { IconButton, XCircleIcon } from '@humanode-hyperlane/widgets';
 import Image from 'next/image';
 import { useState } from 'react';
 

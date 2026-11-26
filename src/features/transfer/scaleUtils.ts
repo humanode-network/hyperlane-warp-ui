@@ -1,6 +1,10 @@
-import type { ScaleInput } from '@hyperlane-xyz/sdk';
-import { localAmountFromMessage, messageAmountFromLocal, scalesEqual } from '@hyperlane-xyz/sdk';
-import { fromWei, toWei } from '@hyperlane-xyz/utils';
+import type { ScaleInput } from '@humanode-hyperlane/sdk';
+import {
+  localAmountFromMessage,
+  messageAmountFromLocal,
+  scalesEqual,
+} from '@humanode-hyperlane/sdk';
+import { fromWei, toWei } from '@humanode-hyperlane/utils';
 
 import { logger } from '../../utils/logger';
 

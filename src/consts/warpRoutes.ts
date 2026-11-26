@@ -1,4 +1,4 @@
-import { WarpCoreConfig } from '@hyperlane-xyz/sdk';
+import { WarpCoreConfig } from '@humanode-hyperlane/sdk';
 
 // A list of Warp Route token configs
 // These configs will be merged with the warp routes in the configured registry

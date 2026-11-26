@@ -1,5 +1,5 @@
-import { Token, WarpCoreFeeEstimate } from '@hyperlane-xyz/sdk';
-import { isNullish } from '@hyperlane-xyz/utils';
+import { Token, WarpCoreFeeEstimate } from '@humanode-hyperlane/sdk';
+import { isNullish } from '@humanode-hyperlane/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 

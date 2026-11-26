@@ -4,8 +4,8 @@ import {
   TOKEN_COLLATERALIZED_STANDARDS,
   TokenStandard,
   WarpCore,
-} from '@hyperlane-xyz/sdk';
-import { eqAddress, isNullish, normalizeAddress, objKeys } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { eqAddress, isNullish, normalizeAddress, objKeys } from '@humanode-hyperlane/utils';
 
 import { DefaultMultiCollateralRoutes, TokenSelectionMode } from './types';
 

@@ -1,5 +1,5 @@
-import { MultiProtocolProvider } from '@hyperlane-xyz/sdk';
-import { toBase64 } from '@hyperlane-xyz/utils';
+import { MultiProtocolProvider } from '@humanode-hyperlane/sdk';
+import { toBase64 } from '@humanode-hyperlane/utils';
 
 import { config } from '../consts/config';
 import { links } from '../consts/links';

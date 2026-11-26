@@ -1,4 +1,4 @@
-import { ChevronIcon, Modal, SpinnerIcon } from '@hyperlane-xyz/widgets';
+import { ChevronIcon, Modal, SpinnerIcon } from '@humanode-hyperlane/widgets';
 import { useField } from 'formik';
 import { useState } from 'react';
 

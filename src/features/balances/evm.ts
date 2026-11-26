@@ -1,6 +1,6 @@
-import { ChainAddresses } from '@hyperlane-xyz/registry';
-import { ChainMap, MultiProtocolProvider, Token } from '@hyperlane-xyz/sdk';
-import { ProtocolType, normalizeAddress } from '@hyperlane-xyz/utils';
+import { ChainAddresses } from '@humanode-hyperlane/registry';
+import { ChainMap, MultiProtocolProvider, Token } from '@humanode-hyperlane/sdk';
+import { ProtocolType, normalizeAddress } from '@humanode-hyperlane/utils';
 import {
   Hex,
   createPublicClient,

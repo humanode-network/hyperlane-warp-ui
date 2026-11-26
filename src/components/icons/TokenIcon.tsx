@@ -1,6 +1,6 @@
-import { IToken } from '@hyperlane-xyz/sdk';
-import { isHttpsUrl, isRelativeUrl } from '@hyperlane-xyz/utils';
-import { Circle } from '@hyperlane-xyz/widgets';
+import { IToken } from '@humanode-hyperlane/sdk';
+import { isHttpsUrl, isRelativeUrl } from '@humanode-hyperlane/utils';
+import { Circle } from '@humanode-hyperlane/widgets';
 import type { SyntheticEvent } from 'react';
 import { useState } from 'react';
 

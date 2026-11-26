@@ -1,4 +1,4 @@
-import { IToken, QuotedCallsParams, Token, TokenAmount, WarpCore } from '@hyperlane-xyz/sdk';
+import { IToken, QuotedCallsParams, Token, TokenAmount, WarpCore } from '@humanode-hyperlane/sdk';
 import {
   KnownProtocolType,
   ProtocolType,
@@ -9,14 +9,14 @@ import {
   isValidAddressEvm,
   normalizeAddress,
   toWei,
-} from '@hyperlane-xyz/utils';
-import { ChevronIcon, SpinnerIcon, useModal } from '@hyperlane-xyz/widgets';
+} from '@humanode-hyperlane/utils';
+import { ChevronIcon, SpinnerIcon, useModal } from '@humanode-hyperlane/widgets';
 import {
   getAccountAddressAndPubKey,
   useAccountAddressForChain,
   useAccounts,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
-import { type AccountInfo } from '@hyperlane-xyz/widgets/walletIntegrations/types';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
+import { type AccountInfo } from '@humanode-hyperlane/widgets/walletIntegrations/types';
 import BigNumber from 'bignumber.js';
 import { Form, Formik, useFormikContext } from 'formik';
 import { useCallback, useEffect, useMemo, useState } from 'react';

@@ -1,5 +1,5 @@
-import { FeeQuotingClient, FeeQuotingCommand, WARP_FEE_COMMANDS } from '@hyperlane-xyz/sdk';
-import { isValidAddressEvm } from '@hyperlane-xyz/utils';
+import { FeeQuotingClient, FeeQuotingCommand, WARP_FEE_COMMANDS } from '@humanode-hyperlane/sdk';
+import { isValidAddressEvm } from '@humanode-hyperlane/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const apiKey = process.env.FEE_QUOTING_API_KEY;

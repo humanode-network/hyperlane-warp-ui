@@ -1,4 +1,4 @@
-import type { Address, ChainId } from '@hyperlane-xyz/utils';
+import type { Address, ChainId } from '@humanode-hyperlane/utils';
 
 export enum MessageStatus {
   Unknown = 'unknown',

@@ -1,5 +1,5 @@
-import { MultiProtocolProvider, TokenStandard } from '@hyperlane-xyz/sdk';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { MultiProtocolProvider, TokenStandard } from '@humanode-hyperlane/sdk';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { describe, expect, test, vi } from 'vitest';
 
 import { createMockToken } from '../../utils/test';

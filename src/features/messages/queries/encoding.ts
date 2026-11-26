@@ -1,4 +1,4 @@
-import type { ChainMetadata } from '@hyperlane-xyz/sdk';
+import type { ChainMetadata } from '@humanode-hyperlane/sdk';
 import {
   addressToByteHexString,
   bufferToBase58,
@@ -7,7 +7,7 @@ import {
   isAddressEvm,
   ProtocolType,
   strip0x,
-} from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/utils';
 
 export function stringToPostgresBytea(hexString: string): string {
   const trimmed = strip0x(hexString).toLowerCase();

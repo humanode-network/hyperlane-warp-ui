@@ -1,9 +1,9 @@
 import {
   GithubRegistry,
   warpRouteConfigs as publishedWarpRouteConfigs,
-} from '@hyperlane-xyz/registry';
-import { WarpCoreConfig } from '@hyperlane-xyz/sdk';
-import { objKeys } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/registry';
+import { WarpCoreConfig } from '@humanode-hyperlane/sdk';
+import { objKeys } from '@humanode-hyperlane/utils';
 import { assert, test } from 'vitest';
 
 import { config } from './config';

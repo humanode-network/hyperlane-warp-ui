@@ -3,16 +3,16 @@ import type {
   Token,
   TypedTransactionReceipt,
   WarpCore,
-} from '@hyperlane-xyz/sdk';
-import { ProviderType } from '@hyperlane-xyz/sdk/providers/ProviderType';
-import { WarpTxCategory } from '@hyperlane-xyz/sdk/warp/types';
-import { toTitleCase, toWei } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { ProviderType } from '@humanode-hyperlane/sdk/providers/ProviderType';
+import { WarpTxCategory } from '@humanode-hyperlane/sdk/warp/types';
+import { toTitleCase, toWei } from '@humanode-hyperlane/utils';
 import {
   getAccountAddressForChain,
   useAccounts,
   useActiveChains,
   useTransactionFns,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 

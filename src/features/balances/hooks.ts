@@ -1,11 +1,11 @@
-import type { MultiProtocolProvider } from '@hyperlane-xyz/sdk/providers/MultiProtocolProvider';
-import type { IToken } from '@hyperlane-xyz/sdk/token/IToken';
-import type { Token } from '@hyperlane-xyz/sdk/token/Token';
-import { ProtocolType, getAddressProtocolType, isValidAddress } from '@hyperlane-xyz/utils';
-import { useCosmosAccount } from '@hyperlane-xyz/widgets/walletIntegrations/cosmos';
-import { useEthereumAccount } from '@hyperlane-xyz/widgets/walletIntegrations/ethereum';
-import { useAccountAddressForChain } from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
-import { useSolanaAccount } from '@hyperlane-xyz/widgets/walletIntegrations/solana';
+import type { MultiProtocolProvider } from '@humanode-hyperlane/sdk/providers/MultiProtocolProvider';
+import type { IToken } from '@humanode-hyperlane/sdk/token/IToken';
+import type { Token } from '@humanode-hyperlane/sdk/token/Token';
+import { ProtocolType, getAddressProtocolType, isValidAddress } from '@humanode-hyperlane/utils';
+import { useCosmosAccount } from '@humanode-hyperlane/widgets/walletIntegrations/cosmos';
+import { useEthereumAccount } from '@humanode-hyperlane/widgets/walletIntegrations/ethereum';
+import { useAccountAddressForChain } from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
+import { useSolanaAccount } from '@humanode-hyperlane/widgets/walletIntegrations/solana';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { toast } from 'react-toastify';
@@ -67,7 +67,7 @@ export async function getDestinationNativeBalance(
 ) {
   try {
     const chainMetadata = multiProvider.getChainMetadata(destination);
-    const { Token } = await import('@hyperlane-xyz/sdk/token/Token');
+    const { Token } = await import('@humanode-hyperlane/sdk/token/Token');
     const token = Token.FromChainMetadataNativeToken(chainMetadata);
     const balance = await token.getBalance(multiProvider, recipient);
     return balance.amount;

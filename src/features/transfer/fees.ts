@@ -1,5 +1,5 @@
-import { IToken, Token, TokenAmount, WarpCore } from '@hyperlane-xyz/sdk';
-import { objKeys } from '@hyperlane-xyz/utils';
+import { IToken, Token, TokenAmount, WarpCore } from '@humanode-hyperlane/sdk';
+import { objKeys } from '@humanode-hyperlane/utils';
 
 import { chainsRentEstimate } from '../../consts/chains';
 import { logger } from '../../utils/logger';

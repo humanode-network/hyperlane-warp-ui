@@ -113,7 +113,7 @@ try {
   // Check if any dependencies couldn't be restored
   if (failedToRestore.length > 0) {
     console.error('\n❌ Cannot proceed: Some dependencies could not be restored to published versions.');
-    console.error('   This typically happens with unpublished packages (e.g., @hyperlane-xyz/tron-sdk)');
+    console.error('   This typically happens with unpublished packages (e.g., @humanode-hyperlane/tron-sdk)');
     console.error('   or when you are offline.\n');
     console.error('   Failed packages:');
     failedToRestore.forEach(({ name, currentValue }) => {

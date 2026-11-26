@@ -1,7 +1,7 @@
-import { MultiProtocolProvider, Token, WarpCore } from '@hyperlane-xyz/sdk';
-import { KnownProtocolType, objLength } from '@hyperlane-xyz/utils';
-import { getAccountAddressAndPubKey } from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
-import { type AccountInfo } from '@hyperlane-xyz/widgets/walletIntegrations/types';
+import { MultiProtocolProvider, Token, WarpCore } from '@humanode-hyperlane/sdk';
+import { KnownProtocolType, objLength } from '@humanode-hyperlane/utils';
+import { getAccountAddressAndPubKey } from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
+import { type AccountInfo } from '@humanode-hyperlane/widgets/walletIntegrations/types';
 import { track } from '@vercel/analytics';
 
 import { config } from '../../consts/config';

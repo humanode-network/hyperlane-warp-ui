@@ -5,14 +5,14 @@ import type {
   Token,
   TokenAmount,
   WarpCore,
-} from '@hyperlane-xyz/sdk';
-import { EvmQuotedTransferProvider } from '@hyperlane-xyz/sdk';
-import { computeScopedSalt } from '@hyperlane-xyz/sdk/quoted-calls/codec';
-import { TokenPullMode } from '@hyperlane-xyz/sdk/quoted-calls/types';
-import { ProtocolType, addressToBytes32, toWei } from '@hyperlane-xyz/utils';
-import { useDebounce } from '@hyperlane-xyz/widgets';
-import { useAccounts } from '@hyperlane-xyz/widgets/walletIntegrations/accounts';
-import { getAccountAddressAndPubKey } from '@hyperlane-xyz/widgets/walletIntegrations/accountUtils';
+} from '@humanode-hyperlane/sdk';
+import { EvmQuotedTransferProvider } from '@humanode-hyperlane/sdk';
+import { computeScopedSalt } from '@humanode-hyperlane/sdk/quoted-calls/codec';
+import { TokenPullMode } from '@humanode-hyperlane/sdk/quoted-calls/types';
+import { ProtocolType, addressToBytes32, toWei } from '@humanode-hyperlane/utils';
+import { useDebounce } from '@humanode-hyperlane/widgets';
+import { useAccounts } from '@humanode-hyperlane/widgets/walletIntegrations/accounts';
+import { getAccountAddressAndPubKey } from '@humanode-hyperlane/widgets/walletIntegrations/accountUtils';
 import { useQuery } from '@tanstack/react-query';
 import { type Address, type Hex, toHex } from 'viem';
 

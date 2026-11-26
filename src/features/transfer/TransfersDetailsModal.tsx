@@ -1,4 +1,4 @@
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import {
   CopyButton,
   MessageStage,
@@ -9,11 +9,11 @@ import {
   type StageTimings,
   useTimeout,
   WideChevronIcon,
-} from '@hyperlane-xyz/widgets';
+} from '@humanode-hyperlane/widgets';
 import {
   useAccountForChain,
   useWalletDetails,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

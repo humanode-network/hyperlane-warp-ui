@@ -1,4 +1,4 @@
-import { PredicateAttestationRequest, PredicateAttestationResponse } from '@hyperlane-xyz/sdk';
+import { PredicateAttestationRequest, PredicateAttestationResponse } from '@humanode-hyperlane/sdk';
 
 export type AttestationRequest = PredicateAttestationRequest;
 

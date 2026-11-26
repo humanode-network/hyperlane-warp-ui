@@ -4,8 +4,8 @@ import {
   MultiProtocolProvider,
   Token,
   TokenStandard,
-} from '@hyperlane-xyz/sdk';
-import { ProtocolType, normalizeAddress } from '@hyperlane-xyz/utils';
+} from '@humanode-hyperlane/sdk';
+import { ProtocolType, normalizeAddress } from '@humanode-hyperlane/utils';
 
 import { logger } from '../../utils/logger';
 import { getTokenKey } from './utils';

@@ -1,5 +1,5 @@
-import { AleoNetwork, setAleoNetwork } from '@hyperlane-xyz/widgets/walletIntegrations/aleo';
-import { AleoPopupProvider } from '@hyperlane-xyz/widgets/walletIntegrations/aleo/AleoProviders';
+import { AleoNetwork, setAleoNetwork } from '@humanode-hyperlane/widgets/walletIntegrations/aleo';
+import { AleoPopupProvider } from '@humanode-hyperlane/widgets/walletIntegrations/aleo/AleoProviders';
 import type { PropsWithChildren } from 'react';
 
 import { config } from '../../../consts/config';

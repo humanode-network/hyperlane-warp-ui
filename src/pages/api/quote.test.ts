@@ -2,8 +2,8 @@ import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 const mockGetQuote = vi.fn();
 
-vi.mock('@hyperlane-xyz/sdk', async (importOriginal) => ({
-  ...(await importOriginal<typeof import('@hyperlane-xyz/sdk')>()),
+vi.mock('@humanode-hyperlane/sdk', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@humanode-hyperlane/sdk')>()),
   FeeQuotingClient: class {
     getQuote = mockGetQuote;
   },

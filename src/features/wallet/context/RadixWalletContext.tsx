@@ -1,10 +1,10 @@
-import { AccountProvider } from '@hyperlane-xyz/widgets/walletIntegrations/radix/AccountContext';
+import { AccountProvider } from '@humanode-hyperlane/widgets/walletIntegrations/radix/AccountContext';
 import '@interchain-ui/react/styles';
 import {
   GatewayApiProvider,
   PopupProvider,
   RdtProvider,
-} from '@hyperlane-xyz/widgets/walletIntegrations/radix/RadixProviders';
+} from '@humanode-hyperlane/widgets/walletIntegrations/radix/RadixProviders';
 import { type PropsWithChildren } from 'react';
 
 import { E2EAutoConnectRadix } from '../_e2e/E2EAutoConnectRadix';

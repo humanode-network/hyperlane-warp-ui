@@ -1,4 +1,4 @@
-import { ChainName } from '@hyperlane-xyz/sdk';
+import { ChainName } from '@humanode-hyperlane/sdk';
 import { useMemo } from 'react';
 
 import { ChainLogo } from '../../components/icons/ChainLogo';

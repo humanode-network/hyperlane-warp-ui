@@ -1,4 +1,4 @@
-import { computeScopedSalt } from '@hyperlane-xyz/sdk';
+import { computeScopedSalt } from '@humanode-hyperlane/sdk';
 import { encodePacked, keccak256 } from 'viem';
 import { describe, expect, test } from 'vitest';
 

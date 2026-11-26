@@ -1,4 +1,4 @@
-import { ChainLogo as ChainLogoInner } from '@hyperlane-xyz/widgets';
+import { ChainLogo as ChainLogoInner } from '@humanode-hyperlane/widgets';
 import { useEffect, useRef } from 'react';
 
 import { useChainMetadata } from '../../features/chains/hooks';

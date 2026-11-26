@@ -1,11 +1,11 @@
-import { useAccount } from '@hyperlane-xyz/widgets/walletIntegrations/radix/AccountContext';
+import { useAccount } from '@humanode-hyperlane/widgets/walletIntegrations/radix/AccountContext';
 import { useEffect } from 'react';
 
 // Radix account address for E2E. Deterministic, recognisable in traces.
 export const MOCK_RADIX_ADDRESS =
   'account_rdx12e2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee2ee';
 
-// The @hyperlane-xyz/widgets Radix AccountContext tracks the connected
+// The @humanode-hyperlane/widgets Radix AccountContext tracks the connected
 // account purely in React state (no adapter/client class). Seeding that state
 // at mount is enough for downstream hooks (`useAccount`) to observe a
 // connected wallet on the Radix chain.

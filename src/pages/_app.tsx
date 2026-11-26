@@ -1,6 +1,6 @@
-import { useIsSsr } from '@hyperlane-xyz/widgets';
+import { useIsSsr } from '@humanode-hyperlane/widgets';
 
-import '@hyperlane-xyz/widgets/styles.css';
+import '@humanode-hyperlane/widgets/styles.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';

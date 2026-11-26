@@ -1,4 +1,4 @@
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { describe, expect, it } from 'vitest';
 
 import { config } from '../../consts/config';

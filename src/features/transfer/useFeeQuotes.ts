@@ -5,13 +5,13 @@ import {
   TokenAmount,
   WarpCore,
   WarpCoreFeeEstimate,
-} from '@hyperlane-xyz/sdk';
-import { HexString, ProtocolType, toWei } from '@hyperlane-xyz/utils';
-import { useDebounce } from '@hyperlane-xyz/widgets';
+} from '@humanode-hyperlane/sdk';
+import { HexString, ProtocolType, toWei } from '@humanode-hyperlane/utils';
+import { useDebounce } from '@humanode-hyperlane/widgets';
 import {
   getAccountAddressAndPubKey,
   useAccounts,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 

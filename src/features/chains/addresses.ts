@@ -1,6 +1,6 @@
-import { ChainAddresses, ChainAddressesSchema, IRegistry } from '@hyperlane-xyz/registry';
-import { ChainMap, ChainName } from '@hyperlane-xyz/sdk';
-import { objFilter, objMerge } from '@hyperlane-xyz/utils';
+import { ChainAddresses, ChainAddressesSchema, IRegistry } from '@humanode-hyperlane/registry';
+import { ChainMap, ChainName } from '@humanode-hyperlane/sdk';
+import { objFilter, objMerge } from '@humanode-hyperlane/utils';
 import { z } from 'zod';
 
 import { addresses as ChainAddressesTS } from '../../consts/chainAddresses.ts';
@@ -12,7 +12,7 @@ export async function assembleChainAddresses(
   chainsInTokens: ChainName[],
   registry: IRegistry,
 ): Promise<ChainMap<ChainAddresses>> {
-  const result = z.record(ChainAddressesSchema).safeParse({
+  const result = z.record(z.string(), ChainAddressesSchema).safeParse({
     ...ChainAddressesYaml,
     ...ChainAddressesTS,
   });
@@ -38,7 +38,7 @@ export async function assembleChainAddresses(
     logger.debug('Using default published registry for chain addresses');
   }
   if (!registryChainAddresses) {
-    registryChainAddresses = (await import('@hyperlane-xyz/registry')).chainAddresses;
+    registryChainAddresses = (await import('@humanode-hyperlane/registry')).chainAddresses;
   }
 
   // Filter to only chains referenced by the configured warp routes

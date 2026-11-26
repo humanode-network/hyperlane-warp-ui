@@ -10,7 +10,7 @@ To use custom chains or custom warp routes, you can either configure a different
 
 ## Custom Warp Route Configs
 
-This app requires a set of warp route configs to function. The configs are located in `./src/consts/warpRoutes.yaml` and `./src/consts/warpRoutes.ts`. The output artifacts of a warp route deployment using the [Hyperlane CLI](https://www.npmjs.com/package/@hyperlane-xyz/cli) can be used here.
+This app requires a set of warp route configs to function. The configs are located in `./src/consts/warpRoutes.yaml` and `./src/consts/warpRoutes.ts`. The output artifacts of a warp route deployment using the [Hyperlane CLI](https://www.npmjs.com/package/@humanode-hyperlane/cli) can be used here.
 
 In addition to defining your warp route configs, you can control which routes display in the UI via the `warpRouteWhitelist.ts` file.
 
@@ -18,7 +18,7 @@ In addition to defining your warp route configs, you can control which routes di
 
 By default, the app will use only the chains that are included in the configured registry and included in your warp routes.
 
-To add support for additional chains, or to override a chain's properties (such as RPC URLs), add chain metadata to either `./src/consts/chains.ts` or `./src/consts/chains.yaml`. The same chain configs used in the [Hyperlane CLI](https://www.npmjs.com/package/@hyperlane-xyz/cli) will work here. You may also add an optional `logoURI` field to a chain config to show a custom logo image in the app.
+To add support for additional chains, or to override a chain's properties (such as RPC URLs), add chain metadata to either `./src/consts/chains.ts` or `./src/consts/chains.yaml`. The same chain configs used in the [Hyperlane CLI](https://www.npmjs.com/package/@humanode-hyperlane/cli) will work here. You may also add an optional `logoURI` field to a chain config to show a custom logo image in the app.
 
 ## Default Multi-Collateral Warp Route
 

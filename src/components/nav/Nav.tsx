@@ -1,4 +1,4 @@
-import { GithubIcon } from '@hyperlane-xyz/widgets';
+import { GithubIcon } from '@humanode-hyperlane/widgets';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { forwardRef, ReactNode } from 'react';

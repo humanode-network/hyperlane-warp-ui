@@ -1,8 +1,8 @@
-import { Modal } from '@hyperlane-xyz/widgets';
+import { Modal } from '@humanode-hyperlane/widgets';
 import {
   getAccountAddressAndPubKey,
   useAccounts,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useFormikContext } from 'formik';
 
 import { SolidButton } from '../../components/buttons/SolidButton';

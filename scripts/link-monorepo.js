@@ -163,7 +163,7 @@ args.forEach((folder) => {
   if (result) packedPackages.push(result);
 });
 
-console.log('📦 Packing hardcoded package: @hyperlane-xyz/core (from solidity/)');
+console.log('📦 Packing hardcoded package: @humanode-hyperlane/core (from solidity/)');
 const coreResult = packPackage(SOLIDITY_DIR);
 if (coreResult) packedPackages.push(coreResult);
 

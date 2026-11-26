@@ -1,4 +1,4 @@
-import { DropdownMenu } from '@hyperlane-xyz/widgets';
+import { DropdownMenu } from '@humanode-hyperlane/widgets';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -1,7 +1,18 @@
-import { BaseRegistry } from '@hyperlane-xyz/registry';
-import { MultiProtocolProvider, WarpCoreConfig, WarpCoreConfigSchema } from '@hyperlane-xyz/sdk';
-import { failure, Result, success, tryParseJsonOrYaml } from '@hyperlane-xyz/utils';
-import { Button, CopyButton, IconButton, Modal, PlusIcon, XIcon } from '@hyperlane-xyz/widgets';
+import { BaseRegistry } from '@humanode-hyperlane/registry';
+import {
+  MultiProtocolProvider,
+  WarpCoreConfig,
+  WarpCoreConfigSchema,
+} from '@humanode-hyperlane/sdk';
+import { failure, Result, success, tryParseJsonOrYaml } from '@humanode-hyperlane/utils';
+import {
+  Button,
+  CopyButton,
+  IconButton,
+  Modal,
+  PlusIcon,
+  XIcon,
+} from '@humanode-hyperlane/widgets';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { toast } from 'react-toastify';

@@ -5,7 +5,7 @@ import {
   TokenConnection,
   TokenConnectionType,
   TokenStandard,
-} from '@hyperlane-xyz/sdk';
+} from '@humanode-hyperlane/sdk';
 
 export const mockCollateralAddress = '0xabc';
 export const addressZero = '0x0000000000000000000000000000000000000000';

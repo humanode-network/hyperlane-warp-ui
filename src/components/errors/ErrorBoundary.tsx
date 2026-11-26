@@ -1,4 +1,4 @@
-import { ErrorBoundary as ErrorBoundaryInner } from '@hyperlane-xyz/widgets';
+import { ErrorBoundary as ErrorBoundaryInner } from '@humanode-hyperlane/widgets';
 import { PropsWithChildren } from 'react';
 
 import { links } from '../../consts/links';

@@ -1,9 +1,9 @@
-import { ProtocolType } from '@hyperlane-xyz/utils';
-import { useTimeout } from '@hyperlane-xyz/widgets';
+import { ProtocolType } from '@humanode-hyperlane/utils';
+import { useTimeout } from '@humanode-hyperlane/widgets';
 import {
   useAccountForChain,
   useConnectFns,
-} from '@hyperlane-xyz/widgets/walletIntegrations/multiProtocol';
+} from '@humanode-hyperlane/widgets/walletIntegrations/multiProtocol';
 import { useFormikContext } from 'formik';
 import { useCallback } from 'react';
 

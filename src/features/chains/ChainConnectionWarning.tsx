@@ -1,5 +1,5 @@
-import { ChainMetadata, isRpcHealthy } from '@hyperlane-xyz/sdk';
-import { ProtocolType } from '@hyperlane-xyz/utils';
+import { ChainMetadata, isRpcHealthy } from '@humanode-hyperlane/sdk';
+import { ProtocolType } from '@humanode-hyperlane/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 
