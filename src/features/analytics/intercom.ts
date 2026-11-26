@@ -1,8 +1,11 @@
 import Intercom from '@intercom/messenger-js-sdk';
 
+import { deployTimeSetting } from '../../consts/deployTimeSettings';
 import { logger } from '../../utils/logger';
 
-export const INTERCOM_APP_ID = process.env.NEXT_PUBLIC_INTERCOM_APP_ID || '';
+export const INTERCOM_APP_ID =
+  (deployTimeSetting('NEXT_PUBLIC_INTERCOM_APP_ID') ?? process.env.NEXT_PUBLIC_INTERCOM_APP_ID) ||
+  '';
 
 let isInitialized = false;
 

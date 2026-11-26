@@ -1,8 +1,15 @@
 import { config } from '../../consts/config';
+import { deployTimeSetting } from '../../consts/deployTimeSettings';
 import { logger } from '../../utils/logger';
 
-const REFINER_PROJECT_ID = process.env.NEXT_PUBLIC_REFINER_PROJECT_ID || '';
-const REFINER_TRANSFER_FORM_ID = process.env.NEXT_PUBLIC_REFINER_TRANSFER_FORM_ID || '';
+const REFINER_PROJECT_ID =
+  (deployTimeSetting('NEXT_PUBLIC_REFINER_PROJECT_ID') ??
+    process.env.NEXT_PUBLIC_REFINER_PROJECT_ID) ||
+  '';
+const REFINER_TRANSFER_FORM_ID =
+  (deployTimeSetting('NEXT_PUBLIC_REFINER_TRANSFER_FORM_ID') ??
+    process.env.NEXT_PUBLIC_REFINER_TRANSFER_FORM_ID) ||
+  '';
 
 type RefinerFn = (method: string, ...args: unknown[]) => void;
 

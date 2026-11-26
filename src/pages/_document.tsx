@@ -34,6 +34,10 @@ export default function Document() {
             Inline version would be blocked by CSP (no unsafe-inline in script-src). */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="/theme-init.js" />
+        {/* Deploy-time settings (src/consts/deployTimeSettings.ts), set before the app's scripts
+            read them; same-origin and synchronous for the same reason as theme-init.js. */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/config.js" />
       </Head>
       <body className="font-primary text-black">
         <Main />

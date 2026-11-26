@@ -2,21 +2,48 @@ import { ChainMap } from '@humanode-hyperlane/sdk';
 import { ProtocolType } from '@humanode-hyperlane/utils';
 
 import { ADDRESS_BLACKLIST } from './blacklist';
+import { deployTimeSetting } from './deployTimeSettings';
 
 const isDevMode = process.env.NODE_ENV === 'development';
 const version = process.env.NEXT_PUBLIC_VERSION || '2.0.0';
-const registryUrl = process.env.NEXT_PUBLIC_REGISTRY_URL || undefined;
-const registryBranch = process.env.NEXT_PUBLIC_REGISTRY_BRANCH || undefined;
-const registryProxyUrl = process.env.NEXT_PUBLIC_GITHUB_PROXY || 'https://proxy.hyperlane.xyz';
-const walletConnectProjectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID || '';
-const transferBlacklist = process.env.NEXT_PUBLIC_TRANSFER_BLACKLIST || '';
-const chainWalletWhitelists = JSON.parse(process.env.NEXT_PUBLIC_CHAIN_WALLET_WHITELISTS || '{}');
-const rpcOverrides = process.env.NEXT_PUBLIC_RPC_OVERRIDES || '';
+const registryUrl =
+  (deployTimeSetting('NEXT_PUBLIC_REGISTRY_URL') ?? process.env.NEXT_PUBLIC_REGISTRY_URL) ||
+  undefined;
+const registryBranch =
+  (deployTimeSetting('NEXT_PUBLIC_REGISTRY_BRANCH') ?? process.env.NEXT_PUBLIC_REGISTRY_BRANCH) ||
+  undefined;
+const registryProxyUrl =
+  (deployTimeSetting('NEXT_PUBLIC_GITHUB_PROXY') ?? process.env.NEXT_PUBLIC_GITHUB_PROXY) ||
+  'https://proxy.hyperlane.xyz';
+const walletConnectProjectId =
+  (deployTimeSetting('NEXT_PUBLIC_WALLET_CONNECT_ID') ??
+    process.env.NEXT_PUBLIC_WALLET_CONNECT_ID) ||
+  '';
+const transferBlacklist =
+  (deployTimeSetting('NEXT_PUBLIC_TRANSFER_BLACKLIST') ??
+    process.env.NEXT_PUBLIC_TRANSFER_BLACKLIST) ||
+  '';
+const chainWalletWhitelists = JSON.parse(
+  (deployTimeSetting('NEXT_PUBLIC_CHAIN_WALLET_WHITELISTS') ??
+    process.env.NEXT_PUBLIC_CHAIN_WALLET_WHITELISTS) ||
+    '{}',
+);
+const rpcOverrides =
+  (deployTimeSetting('NEXT_PUBLIC_RPC_OVERRIDES') ?? process.env.NEXT_PUBLIC_RPC_OVERRIDES) || '';
 const explorerApiUrl =
-  process.env.NEXT_PUBLIC_EXPLORER_API_URL || 'https://explorer4.hasura.app/v1/graphql';
-const feeQuotingUrl = process.env.NEXT_PUBLIC_FEE_QUOTING_URL || undefined;
-const relayApiUrl = process.env.NEXT_PUBLIC_RELAY_API_URL || undefined;
-const aleoNetwork = process.env.NEXT_PUBLIC_ALEO_NETWORK === 'testnet' ? 'testnet' : 'mainnet';
+  (deployTimeSetting('NEXT_PUBLIC_EXPLORER_API_URL') ?? process.env.NEXT_PUBLIC_EXPLORER_API_URL) ||
+  'https://explorer4.hasura.app/v1/graphql';
+const feeQuotingUrl =
+  (deployTimeSetting('NEXT_PUBLIC_FEE_QUOTING_URL') ?? process.env.NEXT_PUBLIC_FEE_QUOTING_URL) ||
+  undefined;
+const relayApiUrl =
+  (deployTimeSetting('NEXT_PUBLIC_RELAY_API_URL') ?? process.env.NEXT_PUBLIC_RELAY_API_URL) ||
+  undefined;
+const aleoNetwork =
+  (deployTimeSetting('NEXT_PUBLIC_ALEO_NETWORK') ?? process.env.NEXT_PUBLIC_ALEO_NETWORK) ===
+  'testnet'
+    ? 'testnet'
+    : 'mainnet';
 
 interface Config {
   addressBlacklist: string[]; // A list of addresses that are blacklisted and cannot be used in the app
